@@ -19,9 +19,16 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\WhyChooseController;
 
+use App\Http\Controllers\Auth\ConfirmPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\VerificationController;
+
 Auth::routes();
 
-// frontend 
+// FRONTEND 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/frontEnd/serviceDetails/{id}', [HomeController::class, 'serviceDetails']);
 Route::get('/frontEnd/news', [HomeController::class, 'news']);
@@ -32,91 +39,88 @@ Route::get('/categoryWiseAllImage/{id}', [HomeController::class, 'categoryWiseAl
 Route::get('/frontEnd/productDetails/{id}', [ProductDetailsController::class, 'index']);
 Route::get('/frontEnd/ecommerce/', [ProductDetailsController::class, 'ecommerce']);
 
-
-//admin routes
+// USER
 Route::get('/admin', [UserController::class, 'admin']);
 
-// Route::get('/adminDashBoard', 'admin\AdminController@adminDashBoard');
-Route::get('/home', 'admin\AdminController@adminDashBoard');
+// AUTH
+Route::get('admin', [LoginController::class, 'showLoginForm']);
+Route::post('login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('sendMail/', [ForgotPasswordController::class, 'postEmail']);
 
-Route::get('/adminAboutPageEditor', 'admin\AboutController@adminAboutPageEditor');
-Route::post('/addBackGroundAbout', 'admin\AboutController@addBackGroundAbout');
-Route::post('/deleteBackgroundImageAbout', 'admin\AboutController@deleteBackgroundImageAbout');
-Route::post('/firstSectionContentsOfAbout', 'admin\AboutController@firstSectionContentsOfAbout');
-Route::post('/aboutDeletePostSectionOne', 'admin\AboutController@aboutDeletePostSectionOne');
-Route::post('/aboutSectionOneContentsEditView', 'admin\AboutController@aboutSectionOneContentsEditView');
-Route::post('/editFirstSectionContentsOfAbout', 'admin\AboutController@editFirstSectionContentsOfAbout');
+// ADMIN
+Route::get('/home', [AdminController::class, 'adminDashBoard']);
 
-//service route
-Route::get('/adminServicePageEditor', 'admin\ServiceController@servicePageEditor');
-Route::post('/admin/saveService', 'admin\ServiceController@saveService');
-Route::post('/editServiceDetails', 'admin\ServiceController@editServiceDetails');
-Route::post('/deleteServiceDetails', 'admin\ServiceController@deleteServiceDetails');
-Route::get('/admin/activeService/{id}', 'admin\ServiceController@activeService');
-Route::get('/admin/InactiveService/{id}', 'admin\ServiceController@inactiveService');
+// ABOUT
+Route::get('/adminAboutPageEditor', [AboutController::class, 'adminAboutPageEditor']);
+Route::post('/addBackGroundAbout', [AboutController::class, 'addBackGroundAbout']);
+Route::post('/deleteBackgroundImageAbout', [AboutController::class, 'deleteBackgroundImageAbout']);
+Route::post('/firstSectionContentsOfAbout', [AboutController::class, 'firstSectionContentsOfAbout']);
+Route::post('/aboutDeletePostSectionOne', [AboutController::class, 'aboutDeletePostSectionOne']);
+Route::post('/aboutSectionOneContentsEditView', [AboutController::class, 'aboutSectionOneContentsEditView']);
+Route::post('/editFirstSectionContentsOfAbout', [AboutController::class, 'editFirstSectionContentsOfAbout']);
 
-//gallery admin route
-Route::get('/adminGalleryPageEditor', 'admin\GalleryController@adminGalleryPageEditor');
-Route::post('/admin/saveGalleryImageType', 'admin\GalleryController@saveGalleryImageType');
-Route::post('/editGalleryImageType', 'admin\GalleryController@editGalleryImageType');
-Route::post('/deleteGalleryDetails', 'admin\GalleryController@deleteGalleryDetails');
-Route::get('/admin/activeGallery/{id}', 'admin\GalleryController@activeGallery');
-Route::get('/admin/InactiveGallery/{id}', 'admin\GalleryController@inactiveGallery');
+// SERVICE
+Route::get('/adminServicePageEditor', [ServiceController::class, 'servicePageEditor']);
+Route::post('/admin/saveService', [ServiceController::class, 'saveService']);
+Route::post('/editServiceDetails', [ServiceController::class, 'editServiceDetails']);
+Route::post('/deleteServiceDetails', [ServiceController::class, 'deleteServiceDetails']);
+Route::get('/admin/activeService/{id}', [ServiceController::class, 'activeService']);
+Route::get('/admin/InactiveService/{id}', [ServiceController::class, 'inactiveService']);
 
+// GALLERY
+Route::get('/adminGalleryPageEditor', [GalleryController::class, 'adminGalleryPageEditor']);
+Route::post('/admin/saveGalleryImageType', [GalleryController::class, 'saveGalleryImageType']);
+Route::post('/editGalleryImageType', [GalleryController::class, 'editGalleryImageType']);
+Route::post('/deleteGalleryDetails', [GalleryController::class, 'deleteGalleryDetails']);
+Route::get('/admin/activeGallery/{id}', [GalleryController::class, 'activeGallery']);
+Route::get('/admin/InactiveGallery/{id}', [GalleryController::class, 'inactiveGallery']);
+Route::get('/adminGalleryImageTypePageEditor', [GalleryController::class, 'adminGalleryImageTypePageEditor']);
+Route::post('/admin/saveGallery', [GalleryController::class, 'saveGallery']);
+Route::post('/editGalleryDetails', [GalleryController::class, 'editGalleryDetails']);
+Route::post('/deleteGalleryDetails', [GalleryController::class, 'deleteGalleryDetails']);
+Route::get('/admin/activeGallery/{id}', [GalleryController::class, 'activeGallery']);
+Route::get('/admin/InactiveGallery/{id}', [GalleryController::class, 'inactiveGallery']);
 
-//GalleryImageType admin route
-Route::get('/adminGalleryImageTypePageEditor', 'admin\GalleryController@adminGalleryImageTypePageEditor');
-Route::post('/admin/saveGallery', 'admin\GalleryController@saveGallery');
-Route::post('/editGalleryDetails', 'admin\GalleryController@editGalleryDetails');
-Route::post('/deleteGalleryDetails', 'admin\GalleryController@deleteGalleryDetails');
-Route::get('/admin/activeGallery/{id}', 'admin\GalleryController@activeGallery');
-Route::get('/admin/InactiveGallery/{id}', 'admin\GalleryController@inactiveGallery');
+// NEWS
+Route::get('/createNews', [NewsController::class, 'createNews']);
+Route::post('/admin/saveNews', [NewsController::class, 'saveNews']);
+Route::post('/editNews', [NewsController::class, 'editNews']);
+Route::post('/deleteNews', [NewsController::class, 'deleteNews']);
+Route::get('/activeNews/{id}', [NewsController::class, 'activeNews']);
+Route::get('/inactiveNews/{id}', [NewsController::class, 'inactiveNews']);
 
-//Gallery image type
-Route::get('/createNews', 'admin\NewsController@createNews');
-Route::post('/admin/saveNews', 'admin\NewsController@saveNews');
-Route::post('/editNews', 'admin\NewsController@editNews');
-Route::post('/deleteNews', 'admin\NewsController@deleteNews');
-Route::get('/activeNews/{id}', 'admin\NewsController@activeNews');
-Route::get('/inactiveNews/{id}', 'admin\NewsController@inactiveNews');
+// WHY US
+Route::get('/admin/createWhyChooseUs', [WhyChooseController::class, 'createWhyChooseUs']);
+Route::get('/admin/deleteWhyChooseUs/{id}', [WhyChooseController::class, 'deleteWhyChooseUs']);
+Route::post('/admin/saveWhyChooseUs', [WhyChooseController::class, 'saveWhyChooseUs']);
+Route::post('/admin/editWhyChooseUsDetails', [WhyChooseController::class, 'editWhyChooseUsDetails']);
 
-// Authentication Routes
-Route::get('admin', 'Auth\LoginController@showLoginForm');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+// PRODUCTS
+Route::get('/admin/createProduct', [ProductController::class, 'createProduct']);
+Route::post('/admin/saveProduct', [ProductController::class, 'saveProduct']);
+Route::post('/admin/editProductDetails', [ProductController::class, 'editProductDetails']);
+Route::post('/admin/deleteProductDetails', [ProductController::class, 'deleteProductDetails']);
+Route::get('/admin/activeProduct/{id}', [ProductController::class, 'activeProduct']);
+Route::get('/admin/InactiveProduct/{id}', [ProductController::class, 'inActiveProduct']);
 
-// Password Reset Routes...
-Route::post('sendMail/', 'Auth\ForgotPasswordController@postEmail');
+// CLIENTS
+Route::get('/admin/createClient', [ClientsController::class, 'createClient']);
+Route::post('/admin/saveClient', [ClientsController::class, 'saveClient']);
+Route::post('/admin/editClientDetails', [ClientsController::class, 'editClientDetails']);
+Route::post('/admin/deleteClientDetails', [ClientsController::class, 'deleteClientDetails']);
+Route::get('/admin/activeClient/{id}', [ClientsController::class, 'activeClient']);
+Route::get('/admin/InactiveClient/{id}', [ClientsController::class, 'inActiveClient']);
 
-// Why Choose Us
-Route::get('/admin/createWhyChooseUs', 'admin\WhyChooseController@createWhyChooseUs');
-Route::get('/admin/deleteWhyChooseUs/{id}', 'admin\WhyChooseController@deleteWhyChooseUs');
-Route::post('/admin/saveWhyChooseUs', 'admin\WhyChooseController@saveWhyChooseUs');
-Route::post('/admin/editWhyChooseUsDetails', 'admin\WhyChooseController@editWhyChooseUsDetails');
+// POLICY
+Route::get('/admin/ManageAppPrivacyPolicy', [AppPrivacyPolicyController::class, 'indexApp'])->name('app.manage');
+Route::get('/admin/createAppPrivacyPolicy', [AppPrivacyPolicyController::class, 'createApp'])->name('app.create');
+Route::post('/admin/saveAppPrivacyPolicy', [AppPrivacyPolicyController::class, 'saveApp']);
+Route::get('/admin/editAppPrivacyPolicy/{id}', [AppPrivacyPolicyController::class, 'editApp'])->name('app.edit');
+Route::post('/admin/updateAppPrivacyPolicy/{id}', [AppPrivacyPolicyController::class, 'updateApp'])->name('app.update');
+Route::post('/admin/deleteAppDetails', [AppPrivacyPolicyController::class, 'deleteAppDetails']);
 
-// Products
-Route::get('/admin/createProduct', 'admin\ProductController@createProduct');
-Route::post('/admin/saveProduct', 'admin\ProductController@saveProduct');
-Route::post('/admin/editProductDetails', 'admin\ProductController@editProductDetails');
-Route::post('/admin/deleteProductDetails', 'admin\ProductController@deleteProductDetails');
-Route::get('/admin/activeProduct/{id}', 'admin\ProductController@activeProduct');
-Route::get('/admin/InactiveProduct/{id}', 'admin\ProductController@inActiveProduct');
-// Our Clients
-Route::get('/admin/createClient', 'admin\ClientsController@createClient');
-Route::post('/admin/saveClient', 'admin\ClientsController@saveClient');
-Route::post('/admin/editClientDetails', 'admin\ClientsController@editClientDetails');
-Route::post('/admin/deleteClientDetails', 'admin\ClientsController@deleteClientDetails');
-Route::get('/admin/activeClient/{id}', 'admin\ClientsController@activeClient');
-Route::get('/admin/InactiveClient/{id}', 'admin\ClientsController@inActiveClient');
-//App Privacy Policy
-Route::get('/admin/ManageAppPrivacyPolicy', 'admin\AppPrivacyPolicyController@indexApp')->name('app.manage');
-Route::get('/admin/createAppPrivacyPolicy', 'admin\AppPrivacyPolicyController@createApp')->name('app.create');
-Route::post('/admin/saveAppPrivacyPolicy', 'admin\AppPrivacyPolicyController@saveApp');
-Route::get('/admin/editAppPrivacyPolicy/{id}', 'admin\AppPrivacyPolicyController@editApp')->name('app.edit');
-Route::post('/admin/updateAppPrivacyPolicy/{id}', 'admin\AppPrivacyPolicyController@updateApp')->name('app.update');
-Route::post('/admin/deleteAppDetails', 'admin\AppPrivacyPolicyController@deleteAppDetails');
-
-// Contact
-Route::get('/adminContactPageEditor', 'admin\ContactController@adminContactPageEditor');
-Route::post('/addBackGroundContact', 'admin\ContactController@addBackGroundContact');
-Route::post('/addContactInfos', 'admin\ContactController@addContactInfos');
+// CONTACT
+Route::get('/adminContactPageEditor', [ContactController::class, 'adminContactPageEditor']);
+Route::post('/addBackGroundContact', [ContactController::class, 'addBackGroundContact']);
+Route::post('/addContactInfos', [ContactController::class, 'addContactInfos']);

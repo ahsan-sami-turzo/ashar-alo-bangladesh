@@ -1,50 +1,50 @@
 <?php
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\models\ContactModel;
 use App\models\ContactInfosModel;
-use App\models\PostWithImageModel;
 use Response;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+
 class ContactController extends Controller
 {
     /**
-    * Create a new controller instance.
-    *
-    * @return void
-    */
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
     /**
-    * Show the application dashboard.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function adminContactPageEditor()
-    {   
+    {
 
         //dd($id);
 
-        $subMenus   = DB::table('submenu')->select('*')->get();
-        $contactBackGrounds     = DB::table('contact')->select('*')->get();
+        $subMenus = DB::table('submenu')->select('*')->get();
+        $contactBackGrounds = DB::table('contact')->select('*')->get();
         // $sections               = DB::table('catagory')->select('*')->where('menuId',2)->first();
-        $firstSectionContents   = DB::table('postWithImage')->select('*')->where('menuId',3)->where('sectionId',1)->get();
-        $secondSectionContents  = DB::table('post')->select('*')->where('menuId',2)->where('sectionId',2)->get();
-        $contactInfos           = DB::table('contactInfos')->select('*')->first();
-        $servicePageEditorArr   = array(
-            'contactBackGrounds'    => $contactBackGrounds,
-            'firstSectionContents'  => $firstSectionContents,
-            'subMenus'              => $subMenus,
-            'contactInfos'          => $contactInfos
+        $firstSectionContents = DB::table('postWithImage')->select('*')->where('menuId', 3)->where('sectionId', 1)->get();
+        $secondSectionContents = DB::table('post')->select('*')->where('menuId', 2)->where('sectionId', 2)->get();
+        $contactInfos = DB::table('contactInfos')->select('*')->first();
+        $servicePageEditorArr = array(
+            'contactBackGrounds' => $contactBackGrounds,
+            'firstSectionContents' => $firstSectionContents,
+            'subMenus' => $subMenus,
+            'contactInfos' => $contactInfos
         );
-        return view('security.admin.contact.adminContactPageEditor',$servicePageEditorArr);
+        return view('security.admin.contact.adminContactPageEditor', $servicePageEditorArr);
     }
 
 
@@ -52,8 +52,8 @@ class ContactController extends Controller
     public function addBackGroundContact(Request $request)
     {
 
-        $slideImageFileName="";
-        if($request->hasFile('image_file')):
+        $slideImageFileName = "";
+        if ($request->hasFile('image_file')):
             $slideImage = $request->file('image_file');
             $filename = $slideImage->getClientOriginalName();
             $EXT = $slideImage->getClientOriginalExtension();
@@ -62,18 +62,19 @@ class ContactController extends Controller
 
             $request->file('image_file')->move('public/uploads/images/backgroundImages/', $slideImageFileName);
         endif;
-        $deleteAllPictures           = DB::table('contact')->delete();
-        $addBackgroundImage          = new ContactModel;
-        $time= Carbon::now();
-        $addBackgroundImage->backGroundImagePath     = $slideImageFileName;
+        $deleteAllPictures = DB::table('contact')->delete();
+        $addBackgroundImage = new ContactModel;
+        $time = Carbon::now();
+        $addBackgroundImage->backGroundImagePath = $slideImageFileName;
         $addBackgroundImage->save();
 
         return response::json('success');
     }
 
-    public function deleteBackgroundImageAbout(Request $request){
+    public function deleteBackgroundImageAbout(Request $request)
+    {
 
-        $delete = DB::table('about')->where('id',$request->deleteBackGround)->delete();
+        $delete = DB::table('about')->where('id', $request->deleteBackGround)->delete();
         return response::json('success');
     }
 
@@ -83,14 +84,14 @@ class ContactController extends Controller
     {
 
         $delete = DB::table('contactInfos')->delete();
-        $addContactInfo             = new ContactInfosModel;
-        $addContactInfo->country    = $request->countryName;
-        $addContactInfo->city       = $request->cityName;
-        $addContactInfo->address    = $request->addressName;
-        $addContactInfo->ph         = $request->phoneNo;
-        $addContactInfo->timing     = $request->officeHour;
-        $addContactInfo->mail       = $request->emailName;
-        $addContactInfo->mailTag    = $request->tagline;
+        $addContactInfo = new ContactInfosModel;
+        $addContactInfo->country = $request->countryName;
+        $addContactInfo->city = $request->cityName;
+        $addContactInfo->address = $request->addressName;
+        $addContactInfo->ph = $request->phoneNo;
+        $addContactInfo->timing = $request->officeHour;
+        $addContactInfo->mail = $request->emailName;
+        $addContactInfo->mailTag = $request->tagline;
         $addContactInfo->save();
         return response::json('success');
 

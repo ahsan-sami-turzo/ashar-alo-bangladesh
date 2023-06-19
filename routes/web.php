@@ -3,55 +3,52 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontEnd\HomeController;
+use App\Http\Controllers\FrontEnd\ProductDetailsController;
 
+use App\Http\Controllers\User\UserController;
+
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminSettingsController;
+use App\Http\Controllers\Admin\AppPrivacyPolicyController;
+use App\Http\Controllers\Admin\ClientsController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\WhyChooseController;
 
 Auth::routes();
-/*****************************************************
-*  frontend 
-*
-*****************************************************/
+
+// frontend 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('frontEnd/productDetails/{id}','FrontEnd\ProductDetailsController@index');
-Route::get('frontEnd/ecommerce/','FrontEnd\ProductDetailsController@ecommerce');
-Route::get('frontEnd/serviceDetails/{id}','FrontEnd\HomeController@serviceDetails');
-
-
-//gallery start
-Route::get('/gallery','FrontEnd\GalleryController@index');
-Route::get('/allGallery','FrontEnd\GalleryController@allGallery');
-Route::get('/categoryWiseAllImage/{id}','FrontEnd\GalleryController@categoryWiseAllImage');
-
-// gallery end
-//news start
-Route::get('frontEnd/news','FrontEnd\NewsController@index');
-Route::get('frontEnd/newsDetails/{id}','FrontEnd\NewsController@newsDetails');
-
-// news end
-/*****************************************************
-*  frontend 
-*
-*****************************************************/
+Route::get('/frontEnd/serviceDetails/{id}', [HomeController::class, 'serviceDetails']);
+Route::get('/frontEnd/news', [HomeController::class, 'news']);
+Route::get('/frontEnd/newsDetails/{id}', [HomeController::class, 'newsDetails']);
+Route::get('/gallery', [HomeController::class, 'gallery']);
+Route::get('/allGallery', [HomeController::class, 'allGallery']);
+Route::get('/categoryWiseAllImage/{id}', [HomeController::class, 'categoryWiseAllImage']);
+Route::get('/frontEnd/productDetails/{id}', [ProductDetailsController::class, 'index']);
+Route::get('/frontEnd/ecommerce/', [ProductDetailsController::class, 'ecommerce']);
 
 
 //admin routes
-// Route::get('/home', 'user\UserController@index')->name('home');
+Route::get('/admin', [UserController::class, 'admin']);
+
 // Route::get('/adminDashBoard', 'admin\AdminController@adminDashBoard');
 Route::get('/home', 'admin\AdminController@adminDashBoard');
-Route::get('/admin', 'user\UserController@admin');
-//Auth::routes();
 
-
-
-Route::get('/adminAboutPageEditor','admin\AboutController@adminAboutPageEditor');
-Route::post('/addBackGroundAbout','admin\AboutController@addBackGroundAbout');
-Route::post('/deleteBackgroundImageAbout','admin\AboutController@deleteBackgroundImageAbout');
-Route::post('/firstSectionContentsOfAbout','admin\AboutController@firstSectionContentsOfAbout');
-Route::post('/aboutDeletePostSectionOne','admin\AboutController@aboutDeletePostSectionOne');
-Route::post('/aboutSectionOneContentsEditView','admin\AboutController@aboutSectionOneContentsEditView');
-Route::post('/editFirstSectionContentsOfAbout','admin\AboutController@editFirstSectionContentsOfAbout');
+Route::get('/adminAboutPageEditor', 'admin\AboutController@adminAboutPageEditor');
+Route::post('/addBackGroundAbout', 'admin\AboutController@addBackGroundAbout');
+Route::post('/deleteBackgroundImageAbout', 'admin\AboutController@deleteBackgroundImageAbout');
+Route::post('/firstSectionContentsOfAbout', 'admin\AboutController@firstSectionContentsOfAbout');
+Route::post('/aboutDeletePostSectionOne', 'admin\AboutController@aboutDeletePostSectionOne');
+Route::post('/aboutSectionOneContentsEditView', 'admin\AboutController@aboutSectionOneContentsEditView');
+Route::post('/editFirstSectionContentsOfAbout', 'admin\AboutController@editFirstSectionContentsOfAbout');
 
 //service route
-Route::get('/adminServicePageEditor','admin\ServiceController@servicePageEditor');
+Route::get('/adminServicePageEditor', 'admin\ServiceController@servicePageEditor');
 Route::post('/admin/saveService', 'admin\ServiceController@saveService');
 Route::post('/editServiceDetails', 'admin\ServiceController@editServiceDetails');
 Route::post('/deleteServiceDetails', 'admin\ServiceController@deleteServiceDetails');
@@ -59,7 +56,7 @@ Route::get('/admin/activeService/{id}', 'admin\ServiceController@activeService')
 Route::get('/admin/InactiveService/{id}', 'admin\ServiceController@inactiveService');
 
 //gallery admin route
-Route::get('/adminGalleryPageEditor','admin\GalleryController@adminGalleryPageEditor');
+Route::get('/adminGalleryPageEditor', 'admin\GalleryController@adminGalleryPageEditor');
 Route::post('/admin/saveGalleryImageType', 'admin\GalleryController@saveGalleryImageType');
 Route::post('/editGalleryImageType', 'admin\GalleryController@editGalleryImageType');
 Route::post('/deleteGalleryDetails', 'admin\GalleryController@deleteGalleryDetails');
@@ -68,7 +65,7 @@ Route::get('/admin/InactiveGallery/{id}', 'admin\GalleryController@inactiveGalle
 
 
 //GalleryImageType admin route
-Route::get('/adminGalleryImageTypePageEditor','admin\GalleryController@adminGalleryImageTypePageEditor');
+Route::get('/adminGalleryImageTypePageEditor', 'admin\GalleryController@adminGalleryImageTypePageEditor');
 Route::post('/admin/saveGallery', 'admin\GalleryController@saveGallery');
 Route::post('/editGalleryDetails', 'admin\GalleryController@editGalleryDetails');
 Route::post('/deleteGalleryDetails', 'admin\GalleryController@deleteGalleryDetails');
@@ -76,20 +73,20 @@ Route::get('/admin/activeGallery/{id}', 'admin\GalleryController@activeGallery')
 Route::get('/admin/InactiveGallery/{id}', 'admin\GalleryController@inactiveGallery');
 
 //Gallery image type
-Route::get('/createNews/','admin\NewsController@createNews');
+Route::get('/createNews', 'admin\NewsController@createNews');
 Route::post('/admin/saveNews', 'admin\NewsController@saveNews');
 Route::post('/editNews', 'admin\NewsController@editNews');
 Route::post('/deleteNews', 'admin\NewsController@deleteNews');
 Route::get('/activeNews/{id}', 'admin\NewsController@activeNews');
 Route::get('/inactiveNews/{id}', 'admin\NewsController@inactiveNews');
-//custom url
-// Authentication Routes...
+
+// Authentication Routes
 Route::get('admin', 'Auth\LoginController@showLoginForm');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Password Reset Routes...
-Route::post('sendMail/','Auth\ForgotPasswordController@postEmail');
+Route::post('sendMail/', 'Auth\ForgotPasswordController@postEmail');
 
 // Why Choose Us
 Route::get('/admin/createWhyChooseUs', 'admin\WhyChooseController@createWhyChooseUs');
@@ -118,17 +115,8 @@ Route::post('/admin/saveAppPrivacyPolicy', 'admin\AppPrivacyPolicyController@sav
 Route::get('/admin/editAppPrivacyPolicy/{id}', 'admin\AppPrivacyPolicyController@editApp')->name('app.edit');
 Route::post('/admin/updateAppPrivacyPolicy/{id}', 'admin\AppPrivacyPolicyController@updateApp')->name('app.update');
 Route::post('/admin/deleteAppDetails', 'admin\AppPrivacyPolicyController@deleteAppDetails');
-/*****************************************************
-*  Contact
-*
-*****************************************************/
-Route::get('/adminContactPageEditor','admin\ContactController@adminContactPageEditor');
-Route::post('/addBackGroundContact','admin\ContactController@addBackGroundContact');
-Route::post('/addContactInfos','admin\ContactController@addContactInfos');
 
-
-
-/*****************************************************
-*  fronteend gallery
-*
-*****************************************************/
+// Contact
+Route::get('/adminContactPageEditor', 'admin\ContactController@adminContactPageEditor');
+Route::post('/addBackGroundContact', 'admin\ContactController@addBackGroundContact');
+Route::post('/addContactInfos', 'admin\ContactController@addContactInfos');

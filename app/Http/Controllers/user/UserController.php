@@ -18,8 +18,6 @@ class UserController extends Controller
     $this->middleware('auth');
   }
 
-
-
   public function index()
   {
     return view('security.index');
@@ -78,8 +76,10 @@ class UserController extends Controller
       ->where('sectionId', 2)
       ->where('menuId', 2)
       ->get();
+
     $galleryName = DB::table('catagory')->select('*')->where('menuId', 1)->where('sectionId', 10)->first();
     $galleries = DB::table('gallery')->select('*')->get();
+
     $portfolioArray = array(
       'menus' => $menus,
       'subMenus' => $subMenus,
@@ -91,8 +91,8 @@ class UserController extends Controller
       'galleryName' => $galleryName,
       'sectionTwoContents' => $sectionTwoContents
     );
-    return view('security.portfolio', $portfolioArray);
 
+    return view('security.portfolio', $portfolioArray);
   }
 
   public function about()
@@ -445,8 +445,6 @@ class UserController extends Controller
     }
   }
 
-
-
   public function registerUser(Request $data)
   {
     if (DB::table('users')->where('email', $data['email'])->exists()) {
@@ -473,6 +471,22 @@ class UserController extends Controller
       );
       return response()->json($data);
     }
+  }
+
+  public function singlePageUser($id)
+  {
+    $menus = DB::table('menu')->select('*')->get();
+    $subMenus = DB::table('submenu')->select('*')->get();
+    $singlePage = DB::table('singlePages')->select('*')->where('subMenuId', $id)->first();
+    $posts = DB::table('postWithImageSubmenu')->select('*')->where('subMenuId', $id)->get();
+    $singleArr = array(
+      'menus' => $menus,
+      'subMenus' => $subMenus,
+      'id' => $id,
+      'posts' => $posts,
+      'singlePage' => $singlePage
+    );
+    return view('security.templateSingle', $singleArr);
   }
 
 }

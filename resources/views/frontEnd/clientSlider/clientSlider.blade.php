@@ -23,7 +23,7 @@
                                 <div class="col-lg-6 col-md-6 col-xs-12">
                                     <div class="right-text-content"> <br><br>
                                         <p>
-                                            <a rel="nofollow noopener" href="" target="_parent">Ambala IT</a> is a customer oriented electronic security and customized IT 
+                                            <a rel="nofollow noopener" href="" target="_parent">Ashar Alo Bangladesh</a> is a customer oriented electronic security and customized IT 
                                             solution provider with a far reaching vision of adding values to the society and industry we operate in.<br><br>We always work with 
                                             latest tecchnology to ensure best quality softwere.<br><br>Most of our solutions are backed up by years of market experience and 
                                             extensive RND. This results in better understanding of our customer’s requirements and satisfy them by providing unique solutions 
@@ -49,7 +49,7 @@
                                 <div class="col-lg-6 col-md-6 col-xs-12">
                                     <div class="right-text-content"> <br><br>
                                         <p>
-                                            <a rel="nofollow noopener" href="" target="_parent">Ambala IT</a> is a customer oriented electronic security and customized IT 
+                                            <a rel="nofollow noopener" href="" target="_parent">Ashar Alo Bangladesh</a> is a customer oriented electronic security and customized IT 
                                             solution provider with a far reaching vision of adding values to the society and industry we operate in.<br><br>We always work with 
                                             latest tecchnology to ensure best quality softwere.<br><br>Most of our solutions are backed up by years of market experience and 
                                             extensive RND. This results in better understanding of our customer’s requirements and satisfy them by providing unique solutions 

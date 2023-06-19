@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\User;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,10 +11,10 @@ use Response;
 class SendMailController extends Controller
 {
   /**
-  * Create a new controller instance.
-  *
-  * @return void
-  */
+   * Create a new controller instance.
+   *
+   * @return void
+   */
   public function __construct()
   {
 
@@ -21,12 +22,12 @@ class SendMailController extends Controller
 
   public function userContactFormSendMail(Request $request)
   {
-    Mail::Send('emails.contactMessage',[ 'message' =>$request->message ], function($mail) use($request){
+    Mail::Send('emails.contactMessage', ['message' => $request->message], function ($mail) use ($request) {
       $mail->from($request->email, $request->email);
       $mail->to('27dae050e2-e2efee@inbox.mailtrap.io')->subject($request->subject)->setBody($request->message);
     });
 
-     return response::json('success');
+    return response::json('success');
   }
 
 

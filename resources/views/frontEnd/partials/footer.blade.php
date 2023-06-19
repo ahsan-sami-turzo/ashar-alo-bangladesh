@@ -176,8 +176,8 @@ padding: 0.05em 0.10em;
                                     <li class="conLi">
                                         <h4 class="location contactH">Contact: </h4>
                                         <span class="footterRes"><img src="{{asset('assets/images/contact-info-01.png')}}" alt="" height="15px;">&nbsp;01708408686</span><br>
-                                        <span class="footterRes"><img src="{{asset('assets/images/contact-info-02.png')}}" alt="" height="15px;">&nbsp;info@ambalait.com</span><br>
-                                        <span class="footterRes"><img src="{{asset('assets/images/contact-info-03.png')}}" alt="" height="15px;">&nbsp;www.ambalait.com</span><br>     
+                                        <span class="footterRes"><img src="{{asset('assets/images/contact-info-02.png')}}" alt="" height="15px;">&nbsp;info@asharalobangladesh.org</span><br>
+                                        <span class="footterRes"><img src="{{asset('assets/images/contact-info-03.png')}}" alt="" height="15px;">&nbsp;www.asharalobangladesh.org</span><br>     
                                     </li>
                                 </ul>
                             </div>      

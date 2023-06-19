@@ -40,13 +40,14 @@ Route::get('/frontEnd/productDetails/{id}', [ProductDetailsController::class, 'i
 Route::get('/frontEnd/ecommerce/', [ProductDetailsController::class, 'ecommerce']);
 
 // USER
+// Route::get('/user/index', [UserController::class, 'index']);
 Route::get('/admin', [UserController::class, 'admin']);
 
 // AUTH
-Route::get('admin', [LoginController::class, 'showLoginForm']);
-Route::post('login', [LoginController::class, 'login']);
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-Route::post('sendMail/', [ForgotPasswordController::class, 'postEmail']);
+Route::get('/admin', [LoginController::class, 'showLoginForm']);
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/sendMail', [ForgotPasswordController::class, 'postEmail']);
 
 // ADMIN
 Route::get('/home', [AdminController::class, 'adminDashBoard']);

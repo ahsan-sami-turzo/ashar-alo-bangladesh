@@ -59,7 +59,7 @@
             
 
             <td>
-                @if(Auth::user()->email == "info@ambalait.com")
+                @if(Auth::user()->email == "info@asharalobangladesh.org")
                 <a href="javascript:;" class="edit-modal" parentId = "{{$menu->parentId}}" editId="{{$menu->id}}" name="{{$menu->menuName}}" route ="{{$menu->route}}">
                     <span class="glyphicon glyphicon-edit"></span>
                 </a>
@@ -74,7 +74,7 @@
 
     </tbody>
 </table>
-@if(auth::user()->email == "info@ambalait.com")
+@if(auth::user()->email == "info@asharalobangladesh.org")
 <div class="panel panel-default">
     <div class="panel-heading">Add Menu</div>
     <div class="panel-body">

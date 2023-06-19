@@ -16,7 +16,7 @@
 					</p>
 					{{-- <p class="footer-text">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <br>Forties Security | Powered <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.ambalait.com" target="_blank">Ambala IT</a>
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <br>Forties Security | Powered <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.asharalobangladesh.org" target="_blank">Ashar Alo Bangladesh</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p> --}}
 				</div>
@@ -67,7 +67,7 @@
 
 	<div class="col-md-12">
 		<p style="text-align: center; margin-top: 3px !important; margin-bottom: 2px !important; color:white">©Radio Bikrampur 2020 | All Rights Reserved </p>
-		<p style="text-align: center; margin-bottom: 3px !important;color:white"><a href="https://www.ambalait.com/" target="_blank" style="color:#fab700">Powered By <img src="{{asset('public/security/user/img/ambalait.png')}}" alt="" style="height:30px;margin-bottom:0.8%;"></a>
+		<p style="text-align: center; margin-bottom: 3px !important;color:white"><a href="https://www.asharalobangladesh.org/" target="_blank" style="color:#fab700">Powered By <img src="{{asset('public/security/user/img/ambalait.png')}}" alt="" style="height:30px;margin-bottom:0.8%;"></a>
 
 		</p>
 	</div>

@@ -10,8 +10,8 @@
                     </div>
                     <ul class="contact-info">
                         <li><img src="assets/images/contact-info-01.png" alt="">01700000000</li>
-                        <li><img src="assets/images/contact-info-02.png" alt="">info@ambalait.com</li>
-                        <li><img src="assets/images/contact-info-03.png" alt="">www.ambalait.com</li>
+                        <li><img src="assets/images/contact-info-02.png" alt="">info@asharalobangladesh.org</li>
+                        <li><img src="assets/images/contact-info-03.png" alt="">www.asharalobangladesh.org</li>
                     </ul>
                 </div>
             </div>

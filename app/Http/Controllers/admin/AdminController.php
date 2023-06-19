@@ -28,7 +28,6 @@ class AdminController extends Controller
      */
     public function adminDashBoard()
     {
-        // dd('ok');
         $subMenus = DB::table('submenu')->select('*')->get();
 
         $menus = DB::table('menu')
@@ -37,8 +36,13 @@ class AdminController extends Controller
             ->where('status', 1)
             ->get();
 
-
-        return view('security.admin.adminDashBoard', ['menus' => $menus, 'subMenus' => $subMenus]);
+        return view(
+            'security.admin.adminDashBoard', 
+            [
+                'menus' => $menus, 
+                'subMenus' => $subMenus
+            ]
+        );
     }
 
 
@@ -49,14 +53,11 @@ class AdminController extends Controller
             ->select('a.menuName', 'a.parentId', 'b.menuName as Parent', 'a.id', 'a.route', 'a.status', 'a.numberOfSection')
             ->get();
 
-
-
-
         $dataAll = DB::table('menu as a')
             ->leftjoin('menu as b', 'a.parentId', '=', 'b.id')
             ->select('a.menuName', 'a.parentId', 'b.menuName as Parent', 'a.id', 'a.route', 'a.status', 'a.numberOfSection')
             ->get()->keyBy('id')->toArray();
-        // dd($dataAll);
+
         $dropDown = [];
 
 
@@ -70,12 +71,8 @@ class AdminController extends Controller
             );
         }
 
-        // dd($dropDown);
-
-
-        // dd($dropDown);      
-
         $subMenus = DB::table('submenu')->select('*')->get();
+        
         return view(
             'security.admin.menus.menus',
             [
@@ -94,6 +91,7 @@ class AdminController extends Controller
             array_unshift($parents, $parent_id);
             return $this->getParent($parent_id, $data, $parents);
         }
+
         return $parents;
     }
 
@@ -105,78 +103,19 @@ class AdminController extends Controller
         }
 
         return $string;
-
     }
 
 
     public function checkParentIds($id, $data = array())
     {
-        // $menuData = DB::table('menu as a')
-        // ->leftjoin('menu as b', 'a.parentId', '=', 'b.id')
-        // ->select('a.menuName','a.parentId','b.menuName as Parent', 'a.id','a.route','a.status','a.numberOfSection')
-        // ->get()->keyBy('id')->toArray();
-        // $parent = "";
-
-
         $parent_id = isset($data[$id]) ? $data[$id]->parentId : 0;
-
-
-
-        // dd($menuData);
-        //    $parent_id = isset($data[$id]) ? $data[$id]->parentId : 0;
-
-        //    if ($parent_id > 0) {
-        //     $data[] = $menuData->parentName;
-
-        //     array_unshift($parent_id, $data);
-        //     return $this->checkParentIds($parent_id, $data);
-
-        //       // return $this->getParent($parent_id, $data, $parents);
-        // }
-        // $this->checkParentIds($menuData->parentId, $data);
-//    } else {
-//     $data = (empty($data)) ? '' : implode("'>'", $data);
-// }
-        // return $data;
-        // return $data;
     }
-
-    // public function addMenu(Request $request)
-    // {  
-    //     $addMenu            = new AddMenuModel;
-    //     $addMenu->menuName  = $request->menuName;
-    //     $addMenu->parentId = $request->parentId;
-    //     $addMenu->numSectionId = $request->numSectionId;
-    //     $addMenu->route     = "/".$request->menuName;
-    //     $addMenu->save();
-
-    //     return $request->menuName. ' ' . $request->parentId . ' ' . $request->numSectionId;
-
-    //     // return $addMenu;
-
-    //     return response::json('success');
-
-    // }
 
     public function addMenu(Request $request)
     {
-        // $addMenu            = new AddMenuModel;
-        // $addMenu->id = (int)$request->id;
-        // $addMenu->menuName  = $request->menuName;
-        // $addMenu->parentId = $request->parentId;
-        // $addMenu->numberOfSection =$request->numberOfSection;
-        // $addMenu->route     = "/".$request->route;
-        // $addMenu->status = $request->status;
-        // $addMenu->save();
-
-        // return $request->id . ' ' . $request->menuName. ' ' .$request->parentId . ' ' .
-        // $request->numberOfSection  . ' ' . $request->route . ' ' . $request->status;
-
         $addMenu = new AddMenuModel;
 
         $inputs = $request->input();
-
-        //dd($inputs);
 
         $addMenu->parentId = (int) $inputs['id'];
         $addMenu->menuName = $inputs['menuName'];
@@ -188,20 +127,11 @@ class AdminController extends Controller
 
         $parent = (int) $inputs['id'];
 
-        if ($parent == 0) {
-
-        } else {
+        if ($parent != 0) {
             DB::table('menu')->where('id', $parent)->increment('numberOfChilds');
-            //return 'ok';
         }
 
-
-        //return $request->menuName. ' ' . $request->parentId . ' ' . $request->numSectionId;
-
-        // return $addMenu;
-
         return response::json('success');
-
     }
 
     public function editMenu(Request $request)
@@ -228,7 +158,6 @@ class AdminController extends Controller
         // DB::table('menu')->where('id', $parent)->increment('numberOfChilds');
 
         return response::json('success');
-
     }
 
     public function adminSubMenuEditor()
@@ -238,6 +167,7 @@ class AdminController extends Controller
             ->select('t1.*', 't2.menuName')
             ->get();
         $menus = DB::table('menu')->select('menuName', 'id')->get();
+
         return view('security.admin.subMenus.subMenus', ['subMenus' => $subMenus, 'menus' => $menus]);
     }
 
@@ -251,7 +181,6 @@ class AdminController extends Controller
         $addSubMenu->save();
 
         return response::json('success');
-
     }
 
     public function editSubMenu(Request $request)
@@ -262,18 +191,13 @@ class AdminController extends Controller
         $editMenu->save();
 
         return response::json('success');
-
     }
 
     public function deleteMenu(Request $request)
     {
-
         $deletechild = $request->parentIdDel;
         $deletechild = (int) $deletechild;
-
         $delete = DB::table('menu')->where('id', $request->id)->delete();
-
-
 
         if ($deletechild == 0) {
 
@@ -284,9 +208,6 @@ class AdminController extends Controller
         // $deleteContent = DB::table('postWithImageSubmenu')->where('subMenuId',$request->deleteSubMenu)->delete();
         // $deleteSubMenu = DB::table('singlePages')->where('subMenuId',$request->deleteSubMenu)->delete();
         return response::json('success');
-
-
-
     }
 
     public function deleteSubMenu(Request $request)
@@ -295,9 +216,6 @@ class AdminController extends Controller
         $deleteContent = DB::table('postWithImageSubmenu')->where('subMenuId', $request->deleteSubMenu)->delete();
         $deleteSubMenu = DB::table('singlePages')->where('subMenuId', $request->deleteSubMenu)->delete();
         return response::json('success');
-
-
-
     }
 
 

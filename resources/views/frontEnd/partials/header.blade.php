@@ -221,23 +221,25 @@
             <div class="row">
                 <div id="myHeader" class="col-12">
                     <div class="logo">
-                        <h1><a href="{{asset('/')}}" class="">
-                                <img src="{{asset('assets\images\logo.png')}}" class="img-responsive"
-                                    style="height: 44px; padding-top:8px;">
-                            </a></h1>
-                        <p class="line-1 anim-typewriter typedSlogan">We Design Your Dream</p>
+                        <h1>
+                            <a href="{{asset('/')}}" class="">
+                                <img src="{{asset('assets\images\ashar-alo-logo.png')}}" class="img-responsive" style="height: 44px; padding-top:8px;">
+                            </a>
+                        </h1>
+                        {{-- <p class="line-1 anim-typewriter typedSlogan">Non-profit Organization</p> --}}
+                        <p class="line-1 anim-typewriter typedSlogan">আশার আলো বাংলাদেশ</p>
                     </div>
 
                     <div class="menu" id="fixedMenu">
                         <a href="" id="menuToggle"> <span class="navClosed"></span> </a>
                         <nav class="navigation" id="mainNav">
                             <a href="#home" class=" scroll">Home</a>
-                            <a href="{{asset('/')}}#about" class="scroll">About</a>
-                            <a href="{{ asset('/') }}#services" class="scroll">Services</a>
+                            <a href="{{ asset('/') }}#services" class="scroll">Projects</a>
+                            <a href="#projects" class="scroll">Past Projects</a>
                             <a href="{{ asset('/') }}#gallery" class="scroll">Gallery</a>
-                            <a href="#projects" class="scroll">Product</a>
-                            <a href="{{asset('/')}}#clients" class="scroll">Clients</a>
+                            <a href="{{asset('/')}}#clients" class="scroll">Partners</a>
                             <a href="#news" class="scroll">News</a>
+                            <a href="{{asset('/')}}#about" class="scroll">About Us</a>
                             <a href="#footerContact" class="scroll">Contact Us</a>
                         </nav>
                         <script>

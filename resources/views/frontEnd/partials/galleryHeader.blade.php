@@ -7,23 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
-    <title>Ashar Alo Bangladesh</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <title>Ashar Alo</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('assets\ico\favicon.ico')}}">
     <!-- Additional CSS Files -->
-
-
-
-
 
     <link href="{{asset('frontEnd/css/style.css')}}" type="text/css" rel="stylesheet" media="all">
     <link href="{{asset('frontEnd/css/style1.css')}}" type="text/css" rel="stylesheet" media="all">
     <link href="{{asset('frontEnd/css/bootstrap1.css')}}" type="text/css" rel="stylesheet" media="all">
     <link href="{{asset('frontEnd/css/bootstrap3.css')}}" type="text/css" rel="stylesheet" media="all">
-    {{--
-    <link href="{{asset('frontEnd/css/contactStyle')}}" type="text/css" rel="stylesheet" media="all"> --}}
     <!-- google fonts -->
-
+    
     <!-- Template CSS -->
 
     <script src="{{asset('frontEnd/js/jquery-2.2.3.min.js')}}"></script>

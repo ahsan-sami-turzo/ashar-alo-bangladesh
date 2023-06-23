@@ -26,8 +26,8 @@
           <div class="Modern-Slider">
             <div class="item">
               <div class="img-fill">
-                <video autoplay loop muted id="myVideo" class="banner" opacity="10%;">
-                  <source src="assets/video/candle.mp4" type="video/mp4">
+                <video autoplay loop muted id="myVideo" class="banner" style="opacity: 10%">
+                  <source src="assets/video/candle-2.mp4" type="video/mp4">
                 </video>
                 <div class="text-content">
                   <p id="content"></p>
@@ -37,7 +37,7 @@
           </div>
 
         </div>
-        <div class="scroll-down scroll-to-section"><a href="#features"><i class="fa fa-arrow-down"></i></a></div>
+        <div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
       </div>
     </div>
   </div>

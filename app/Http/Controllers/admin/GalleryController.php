@@ -102,7 +102,6 @@ class GalleryController extends Controller
         $filename = $image->getClientOriginalName();
         $EXT = $image->getClientOriginalExtension();
         $imageFileName = base64_encode($filename);
-        $imageFileName = $imageFileName;
         $request->file('image')->move('uploads/images/gallery/', $imageFileName);
 
       endif;

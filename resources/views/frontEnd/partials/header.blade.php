@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
-    <title>Ashar Alo Bangladesh</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <title>Ashar Alo</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('assets\ico\favicon.ico')}}">
     <!-- Additional CSS Files -->
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
@@ -223,24 +223,25 @@
                     <div class="logo">
                         <h1>
                             <a href="{{asset('/')}}" class="">
-                                <img src="{{asset('assets\images\ashar-alo-logo.png')}}" class="img-responsive" style="height: 44px; padding-top:8px;">
+                                {{-- <img src="{{asset('assets\images\ashar-alo-logo.png')}}" class="img-responsive" style="height: 44px; padding-top:8px;"> --}}
+                                <img src="{{asset('assets\images\logo-1.png')}}" class="img-responsive" style="height: 44px; padding-top:8px;">
                             </a>
-                        </h1>
-                        {{-- <p class="line-1 anim-typewriter typedSlogan">Non-profit Organization</p> --}}
+                        </h1>                        
                         <p class="line-1 anim-typewriter typedSlogan">আশার আলো বাংলাদেশ</p>
                     </div>
 
                     <div class="menu" id="fixedMenu">
                         <a href="" id="menuToggle"> <span class="navClosed"></span> </a>
                         <nav class="navigation" id="mainNav">
-                            <a href="#home" class=" scroll">Home</a>
-                            <a href="{{ asset('/') }}#services" class="scroll">Projects</a>
-                            <a href="#projects" class="scroll">Past Projects</a>
-                            <a href="{{ asset('/') }}#gallery" class="scroll">Gallery</a>
-                            <a href="{{asset('/')}}#clients" class="scroll">Partners</a>
-                            <a href="#news" class="scroll">News</a>
+                            <a href="{{asset('/')}}#home" class=" scroll">Home</a>
                             <a href="{{asset('/')}}#about" class="scroll">About Us</a>
-                            <a href="#footerContact" class="scroll">Contact Us</a>
+                            {{-- <a href="{{ asset('/') }}#services" class="scroll">Projects</a> --}}
+                            <a href="{{asset('/')}}#projects" class="scroll">Projects</a>
+                            <a href="{{asset('/')}}#clients" class="scroll">Partners</a>
+                            <a href="{{asset('/')}}#news" class="scroll">News</a>
+                            <a href="{{asset('/')}}#gallery" class="scroll">Event Gallery</a>
+                            <a href="{{asset('/')}}#footerContact" class="scroll">Contact Us</a>
+                            <a href="{{asset('/admin')}}" class="scroll" target="_blank">Sign In</a>
                         </nav>
                         <script>
                             (function($){

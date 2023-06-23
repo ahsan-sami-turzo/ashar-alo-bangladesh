@@ -1,4 +1,3 @@
-
 @include('frontEnd.partials.galleryHeader')
 <style>
     .img-fluid{
@@ -32,34 +31,59 @@
         margin-left: 5px;
         border-bottom: 2px solid #939393;
     }
+
+
+    .gallery-container {
+        display: flex; 
+        flex-flow: row wrap; 
+        justify-content: flex-start; 
+        align-items: center; 
+        align-content: center; 
+        gap: 2em; 
+        margin-bottom: 2em;
+    }
   
     
 </style>
     <!--/gallery -->
     <section class="w3-gallery py-5">
         <div class="container py-md-5">
-            <h1 class="galleryhead">Gallery</h1><br><br>
+            <h1 class="galleryhead mb-2">Gallery</h1>
+
             @foreach ($galleryImageType as $key => $item)
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="category">
-                        <a href="{{ url('categoryWiseAllImage/'.$item->id )}}" title="Category {{$item->id}}">{{$item->name}}</a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="category">
+                            <a href="{{ url('categoryWiseAllImage/'.$item->id )}}" title="Category {{$item->id}}">{{$item->name}}</a>
+                        </div>
                     </div>
-                </div>
-            </div> 
-            
-            <div class="row">
-                @foreach ($item->gallary as $key => $gal)
-                <div class="col-md-3">
-                    <span class="image-block">
+                </div> 
+
+                <div class="row gallery-container">
+                    @foreach ($item->gallary as $key => $gal)
+                    <div data-id="id-{{$key}}" data-type="cat-item-{{$gal->img_type_id_fk}}">
                         <a class="image-zoom" target="__blank" href="{{asset('uploads/images/gallery/')}}/{{$gal->image}}" data-gal="prettyPhoto[gallery]">
                             <div class="content-overlay"></div>
-                            <img src="{{asset('uploads/images/gallery/')}}/{{$gal->image}}" class="img-fluid img-style w3layouts agileits" alt="portfolio-img">
+                            <img src="{{asset('uploads/images/gallery/')}}/{{$gal->image}}"
+                                class="img-fluid img-style w3layouts agileits" alt="portfolio-img" />
                         </a>
-                    </span>
+                    </div>            
+                    @endforeach
                 </div>
-                @endforeach
-            </div><br>
+                
+                {{-- <div class="row">
+                    @foreach ($item->gallary as $key => $gal)
+                    <div class="col-md-3">
+                        <span class="image-block">
+                            <a class="image-zoom" target="__blank" href="{{asset('uploads/images/gallery/')}}/{{$gal->image}}" data-gal="prettyPhoto[gallery]">
+                                <div class="content-overlay"></div>
+                                <img src="{{asset('uploads/images/gallery/')}}/{{$gal->image}}" 
+                                    class="img-fluid img-style w3layouts agileits" alt="portfolio-img" />
+                            </a>
+                        </span>
+                    </div>
+                    @endforeach
+                </div> --}}
            
             @endforeach
         </div>

@@ -55,7 +55,7 @@
     <!--/gallery -->
     <section class="w3-gallery py-5">
         <div class="container py-md-5">
-            <h1 class="galleryhead">Gallery</h1><br><br>
+            <h1 class="galleryhead">Gallery Z</h1><br><br>
             <div class="row">
                 <div class="col-md-12">
                     <div class="category">

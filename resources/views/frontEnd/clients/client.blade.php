@@ -26,7 +26,7 @@
 <section id="clients" class="w3l-clients page-section"  style="padding: 0px; background:linear-gradient(-45deg, #dddddd 50%, #cccccc 50%) !important; clip-path:polygon(50% 40px, 100% 0, 100% 100%, 0 100%, 0 0);">
     <div class="container py-md-5 py-4" >
         <div class="text-center mb-sm-5 mb-4">
-            <h3 class="text-center tesheading">Sweet Words from the <strong>Happy Clients</strong></h3><br>
+            <h3 class="text-center tesheading">Our Partners</h3><br>
         </div>
         <div id="owl-demo2" class="owl-carousel owl-theme pb-5">
         @foreach ($clients as $key => $client)

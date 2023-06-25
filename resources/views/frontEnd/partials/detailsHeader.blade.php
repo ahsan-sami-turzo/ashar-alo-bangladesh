@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <title>Ashar Alo Bangladesh</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('assets\ico\favicon.ico')}}">
     <!-- Additional CSS Files -->
    
     
@@ -155,20 +156,21 @@
                 <div class="col-12" id="myHeader" >
                     <div class="logo">
 						<h1><a href="{{asset('/')}}" class="">
-                            <img src="{{asset('assets\images\logo.png')}}" class="img-responsive" style="height: 44px;">
+                            <img src="{{asset('assets\images\logo-1.png')}}" class="img-responsive" style="height: 44px;">
                         </a></h1>
 					</div> 
 					<div class="menu">
 						<a href="" id="menuToggle"> <span class="navClosed"></span> </a>
 						<nav>  
-                            <a href="#home" class=" scroll">Home</a> 
-							<a href="{{asset('/')}}#about" class="scroll">About</a> 
-                            <a href="{{ asset('/') }}#services" class="scroll">Services</a>   
-                            <a href="{{ asset('/') }}#gallery" class="scroll">Gallery</a>  
-							<a href="{{ asset('/') }}#projects" class="scroll">Product</a> 
-                            <a href="{{asset('/')}}#clients" class="scroll">Clients</a>  
-                            <a href="{{ asset('/') }}#news" class="scroll">News</a>  
-							<a href="#footerContact" class="scroll">Contact Us</a>
+                            <a href="{{asset('/')}}#home" class=" scroll">Home</a>
+                            <a href="{{asset('/')}}#about" class="scroll">At a glance</a>
+                            {{-- <a href="{{ asset('/') }}#services" class="scroll">Projects</a> --}}
+                            <a href="{{asset('/')}}#projects" class="scroll">Projects</a>
+                            <a href="{{asset('/')}}#clients" class="scroll">Partners</a>
+                            <a href="{{asset('/')}}#news" class="scroll">News</a>
+                            <a href="{{asset('/')}}#gallery" class="scroll">Event Gallery</a>
+                            <a href="{{asset('/')}}#footerContact" class="scroll">Contact</a>
+                            <a href="{{asset('/admin')}}" class="scroll" target="_blank">Sign In</a>
 						</nav>
 						<script>
 						(function($){

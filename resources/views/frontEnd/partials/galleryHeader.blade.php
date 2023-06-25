@@ -168,13 +168,13 @@
                         <a href="" id="menuToggle"> <span class="navClosed"></span> </a>
                         <nav>
                             <a href="{{asset('/')}}#home" class=" scroll">Home</a>
-                            <a href="{{asset('/')}}#about" class="scroll">About Us</a>
+                            <a href="{{asset('/')}}#about" class="scroll">At a glance</a>
                             {{-- <a href="{{ asset('/') }}#services" class="scroll">Projects</a> --}}
                             <a href="{{asset('/')}}#projects" class="scroll">Projects</a>
                             <a href="{{asset('/')}}#clients" class="scroll">Partners</a>
                             <a href="{{asset('/')}}#news" class="scroll">News</a>
                             <a href="{{asset('/')}}#gallery" class="scroll">Event Gallery</a>
-                            <a href="{{asset('/')}}#footerContact" class="scroll">Contact Us</a>
+                            <a href="{{asset('/')}}#footerContact" class="scroll">Contact</a>
                             <a href="{{asset('/admin')}}" class="scroll" target="_blank">Sign In</a>
                         </nav>
                         <script>

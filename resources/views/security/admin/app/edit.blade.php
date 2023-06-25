@@ -3,7 +3,7 @@
 <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title" style="padding:10px">Edit App</h4>
+            <h4 class="modal-title" style="padding:10px">Edit</h4>
         </div>
         <div class="panel panel-default">    
         <div class="panel-body">
@@ -13,7 +13,7 @@
               <div class="row">
                 <div class="form-group" >
                   <div class="col-md-10">
-                    <label>App Name</label>
+                    <label>Name</label>
                     <input type="text" class="form-control" id="app_name"  name="app_name" required value="{{$ap->app_name}}">
                   </div>
                 </div>
@@ -24,7 +24,7 @@
           
             <div class="form-group" >
               <div class="col-md-10">
-                <label>Privacy and Policy</label>
+                <label>Policy</label>
                 <textarea class="form-control" rows="10" name="privacy_policy" id="editor">{{$ap->privacy_policy}}</textarea>
               </div>
             </div>

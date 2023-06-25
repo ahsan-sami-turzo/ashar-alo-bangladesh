@@ -9,7 +9,7 @@
   </style> -->
 
 <div class="subHeader">
-    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">App Privacy Policy</h1>
+    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">Policy</h1>
 </div>
 <div class="panel panel-info sectionsPost">
     <div class="panel-body">
@@ -21,7 +21,7 @@
                 <tr>
                     <th class="text-center" scope="col" width="20%">Serial No</th>
                     <th class="text-center" scope="col" width="20%">App Name</th>
-                    <th class="text-center" scope="col"width="20%">Privacy Policy</th>
+                    <th class="text-center" scope="col"width="20%">Policy</th>
                     <th class="text-center" scope="col" width="20%">Terms and Condition</th>
                     <th class="text-center" scope="col" width="10%">Action</th>
                 </tr>

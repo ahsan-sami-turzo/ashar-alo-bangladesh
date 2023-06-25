@@ -37,15 +37,14 @@ class ProductController extends Controller
 
   public function createProduct()
   {
-    //dd('ok');
     $allData = DB::table('products')->get();
-    //dd($allData);
     $services = DB::table('products')->where('product_service_id', 1)->get();
-    foreach ($services as $service) {
-      //dd($data);
+    $productServices = DB::table('product_service_details')->get();
+
+    foreach ($services as $service) {      
       $productServices = DB::table('product_service_details')->where('product_id', $service->id)->get();
     }
-    //dd( $productServices);
+    
 
     $features = DB::table('product_main_feature')->get();
     $pfeatures = DB::table('features_desc')->get();

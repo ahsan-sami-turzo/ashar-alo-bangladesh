@@ -4,7 +4,7 @@
   <div class="modal-dialog modal-lg">
       <div class="modal-content">
 <div class="modal-header">
-    <h4 class="modal-title" style="padding:10px">Add App</h4>
+    <h4 class="modal-title" style="padding:10px">Add</h4>
 </div>
 <div class="panel panel-default">    
     <div class="panel-body">
@@ -13,7 +13,7 @@
           <div class="row">
               <div class="form-group" >
                 <div class="col-md-10">
-                  <label>App Name</label>
+                  <label>Name</label>
                   <input type="text" class="form-control"  name="app_name" required>
                 </div>
               </div>
@@ -21,7 +21,7 @@
           <div class="row">
             <div class="form-group" >
               <div class="col-md-10">
-                <label>Privacy Policy</label>
+                <label>Policy</label>
                 <textarea class="form-control" rows="10" name="privacy_policy" id="editor"></textarea>
               </div>
             </div>

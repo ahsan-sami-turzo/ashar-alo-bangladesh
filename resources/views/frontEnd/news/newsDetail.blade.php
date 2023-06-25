@@ -73,4 +73,5 @@
         </div>
     </div> 
 </section> 
-@include('frontEnd.partials.footer1')  
+
+@include('frontEnd.partials.footer')  

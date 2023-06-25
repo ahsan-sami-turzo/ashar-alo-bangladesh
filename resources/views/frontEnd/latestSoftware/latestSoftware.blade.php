@@ -30,7 +30,7 @@
             <div class="col-lg-5">
                 <div class="section-heading">
                     <!-- <h6>Our Projects</h6> -->
-                    <h2>Our Products</h2>
+                    <h2>Projects</h2>
                 </div>
                 <div class="">
                     <ul class="list-group">

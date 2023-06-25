@@ -2,12 +2,12 @@
 @section('main-page')
     
 <div class="subHeader">
-    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">Our Clients</h1>
+    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">Our Partners</h1>
 </div>
 <div class="panel panel-info sectionsPost">
     <div class="panel-body">
         <h4>PRODUCT LISTS</h4>
-        <span style="float: right;position: relative;top: -24px;"><a href="#" class="btn btn-primary" role="button"  onclick="addClient();">Add Client</a></span>
+        <span style="float: right;position: relative;top: -24px;"><a href="#" class="btn btn-primary" role="button"  onclick="addClient();">Add</a></span>
         <div style="background:white;margin-top:2%;">
             <table class="table table-bordered table-hover">
             <thead class="thead-dark">
@@ -15,7 +15,7 @@
                     <th class="text-center" scope="col" width="2%">#SN</th>
                     <th class="text-center" scope="col" width="20%">Title</th>
                     <th class="text-center" scope="col" width="20%">Name</th>
-                    <th class="text-center" scope="col" width="20%">Designation</th>
+                    <th class="text-center" scope="col" width="20%">Tagline</th>
                     <th class="text-center" scope="col">Image</th>
                     <th class="text-center" scope="col" width="10%">Status</th>
                     <th class="text-center" scope="col" width="10%">Action</th>
@@ -54,7 +54,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" style="padding:10px">Add Our Client</h4>
+                <h4 class="modal-title" style="padding:10px">Add</h4>
             </div>
             <div class="panel panel-default">    
             <div class="panel-body">
@@ -79,7 +79,7 @@
                   <div class="row">
                     <div class="form-group" >
                       <div class="col-md-12">
-                        <label>Designation</label>
+                        <label>Tagline</label>
                         <input type="text" class="form-control"  name="designation" required>
                       </div>
                     </div>
@@ -121,7 +121,7 @@
 <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title" style="padding:10px">Edit Our Client</h4>
+            <h4 class="modal-title" style="padding:10px">Edit</h4>
         </div>
         <div class="panel panel-default">    
         <div class="panel-body">
@@ -147,7 +147,7 @@
               <div class="row">
                 <div class="form-group" >
                   <div class="col-md-12">
-                    <label>Designation</label>
+                    <label>Tagline</label>
                     <input type="text" class="form-control"  name="designation" id="designation" required>
                   </div>
                 </div>
@@ -190,7 +190,7 @@
   <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
-              <h4 class="modal-title" style="padding:10px">View Our Client</h4>
+              <h4 class="modal-title" style="padding:10px">View</h4>
           </div>
   
           <div class="panel panel-default">    
@@ -214,7 +214,7 @@
                 <div class="row">
                   <div class="form-group" >
                     <div class="col-md-12">
-                      <label>Designation</label>
+                      <label>Tagline</label>
                       <input type="text" class="form-control"  name="designation" id="view_designation" required>
                     </div>
                   </div>
@@ -232,7 +232,7 @@
                 <div class="row">
                     <div class="form-group"  >
                     <div class="col-md-3">
-                        <label>Client Image:<label><br>
+                        <label>Image<label><br>
                         <img src="" alt="" width="400" height="300" id="view_image">
                     </div>
                     </div>

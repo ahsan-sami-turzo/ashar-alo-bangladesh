@@ -60,8 +60,7 @@ public function saveProduct(Request $request){
           $image    = $request->file('image');
           $filename = $image->getClientOriginalName();
           $EXT      = $image->getClientOriginalExtension();
-          $imageFileName = base64_encode($filename);
-          $imageFileName = $imageFileName;
+          $imageFileName = base64_encode($filename);          
           $request->file('image')->move('uploads/images/products/', $imageFileName);
       endif;
 
@@ -78,7 +77,6 @@ public function saveProduct(Request $request){
           $filename = $image->getClientOriginalName();
           $EXT      = $image->getClientOriginalExtension();
           $imageFileName = base64_encode($filename);
-          $imageFileName = $imageFileName;
           $request->file('image')->move('uploads/images/products/', $imageFileName);
       endif;
       $product          = new Product;

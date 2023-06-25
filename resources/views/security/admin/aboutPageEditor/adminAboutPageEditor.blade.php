@@ -1,11 +1,11 @@
 @extends("layouts.admin")
 @section('main-page')
   <div class="subHeader">
-    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">About us</h1>
+    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">At A Glance</h1>
   </div>
   <div class="panel panel-info sectionsPost">
       <div class="panel-body">
-          <h4>Add Post For First Section</h4>
+          <h4>Add</h4>
           <form id="firstSectionContents"  style="background:white;margin-top:2%;">
               <input type="hidden" name="_token" value="{{csrf_token()}}">
 

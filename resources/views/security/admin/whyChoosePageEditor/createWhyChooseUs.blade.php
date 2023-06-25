@@ -2,7 +2,7 @@
 @section('main-page')
     
 <div class="subHeader">
-    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">Why Choose Us</h1>
+    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">Legal&nbsp;Status</h1>
 </div>
 <div class="panel panel-info sectionsPost">
     <div class="panel-body">
@@ -34,7 +34,7 @@
 </div>
 <div class="panel panel-info sectionsPost">
     <div class="panel-body">
-        <h4>Who Choose Us</h4>
+        <h4>Create</h4>
         <form id="firstSectionContents"  style="background:white;margin-top:2%;" method="POST" action="{{ url('admin/saveWhyChooseUs') }}">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="row">
@@ -83,7 +83,7 @@
 <div class="modal-content">
 
     <div class="modal-header">
-        <h4 class="modal-title" style="padding:10px">Edit Why Choose Us</h4>
+        <h4 class="modal-title" style="padding:10px">Edit</h4>
     </div>
 
     <div class="panel panel-default">    

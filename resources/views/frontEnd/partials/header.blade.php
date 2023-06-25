@@ -240,7 +240,7 @@
                             <a href="{{asset('/')}}#clients" class="scroll">Partners</a>
                             <a href="{{asset('/')}}#news" class="scroll">News</a>
                             <a href="{{asset('/')}}#gallery" class="scroll">Event Gallery</a>
-                            <a href="{{asset('/')}}#footerContact" class="scroll">Contact Us</a>
+                            <a href="{{asset('/')}}#footerContact" class="scroll">Contact</a>
                             <a href="{{asset('/admin')}}" class="scroll" target="_blank">Sign In</a>
                         </nav>
                         <script>

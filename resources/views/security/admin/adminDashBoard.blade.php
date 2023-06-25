@@ -4,26 +4,26 @@
     <div class="col-md-3 widget widget1" onclick="window.location.href = './admin/createWhyChooseUs';">
         <div class="r3_counter_box" style="cursor: pointer;">
             <i class="pull-left fa fa-dollar icon-rounded"></i>
-            <div class="stats" >
-                <h5><strong>Why Choose</strong></h5>
+            <div class="stats">
+                <h5><strong>Legal Status</strong></h5>
                 <span>Page Editor</span>
             </div>
         </div>
     </div>
-    <div class="col-md-3 widget widget1" onclick="window.location.href='./adminAboutPageEditor';" >
+    <div class="col-md-3 widget widget1" onclick="window.location.href='./adminAboutPageEditor';">
         <div class="r3_counter_box" style="cursor: pointer;">
             <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
             <div class="stats">
-                <h5><strong>About US</strong></h5>
+                <h5><strong>At A Glance</strong></h5>
                 <span>Page Editor</span>
             </div>
         </div>
     </div>
-    <div class="col-md-3 widget widget1" onclick="window.location.href='./adminServicePageEditor';" >
+    <div class="col-md-3 widget widget1" onclick="window.location.href='./adminServicePageEditor';">
         <div class="r3_counter_box" style="cursor: pointer;">
             <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
             <div class="stats">
-                <h5><strong>Services</strong></h5>
+                <h5><strong>Features</strong></h5>
                 <span>Page Editor</span>
             </div>
         </div>
@@ -31,8 +31,8 @@
     <div class="col-md-3 widget widget1" onclick="window.location.href = './admin/createProduct';">
         <div class="r3_counter_box" style="cursor: pointer;">
             <i class="pull-left fa fa-dollar icon-rounded"></i>
-            <div class="stats" >
-                <h5><strong>Products</strong></h5>
+            <div class="stats">
+                <h5><strong>Projects</strong></h5>
                 <span>Page Editor</span>
             </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="r3_counter_box" style="cursor: pointer;">
             <i class="pull-left fa fa-money user1 icon-rounded"></i>
             <div class="stats">
-                <h5><strong>Gallery Image Category</strong></h5>
+                <h5><strong>Gallery Category</strong></h5>
                 <span>Page Editor</span>
             </div>
         </div>
@@ -58,11 +58,11 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3 widget widget1" onclick="window.location.href='./admin/createClient';" >
+    <div class="col-md-3 widget widget1" onclick="window.location.href='./admin/createClient';">
         <div class="r3_counter_box" style="cursor: pointer;">
             <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
             <div class="stats">
-                <h5><strong>Our Clients</strong></h5>
+                <h5><strong>Partners</strong></h5>
                 <span>Page Editor</span>
             </div>
         </div>
@@ -70,7 +70,7 @@
     <div class="col-md-3 widget widget1" onclick="window.location.href = './createNews';">
         <div class="r3_counter_box" style="cursor: pointer;">
             <i class="pull-left fa fa-dollar icon-rounded"></i>
-            <div class="stats" >
+            <div class="stats">
                 <h5><strong>News</strong></h5>
                 <span>Page Editor</span>
             </div>
@@ -82,8 +82,8 @@
     <div class="col-md-3 widget widget1" onclick="window.location.href = './admin/ManageAppPrivacyPolicy';">
         <div class="r3_counter_box" style="cursor: pointer;">
             <i class="pull-left fa fa-dollar icon-rounded"></i>
-            <div class="stats" >
-                <h5><strong>App Policy</strong></h5>
+            <div class="stats">
+                <h5><strong>Policy</strong></h5>
                 <span>Page Editor</span>
             </div>
         </div>

@@ -9,18 +9,18 @@
   </style> -->
     
 <div class="subHeader">
-    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">Products</h1>
+    <h1 style="color:#3c7376;font-family: 'Monoton', cursive;">PROJECTS</h1>
 </div>
 <div class="panel panel-info sectionsPost">
     <div class="panel-body">
-        <h4>PRODUCT LISTS</h4>
-        <span style="float: right;position: relative;top: -24px;"><a href="#" class="btn btn-primary" role="button"  onclick="addProduct();">Add Product</a></span>
+        <h4>Proejct List</h4>
+        <span style="float: right;position: relative;top: -24px;"><a href="#" class="btn btn-primary" role="button"  onclick="addProduct();">Create</a></span>
         <div style="background:white;margin-top:2%;">
             <table class="table table-bordered table-hover">
             <thead class="thead-dark">
                 <tr>
                     <th class="text-center" scope="col" width="2%">#SN</th>
-                    <th class="text-center" scope="col" width="20%">Product Name</th>
+                    <th class="text-center" scope="col" width="20%">Name</th>
                     <th class="text-center" scope="col">Image</th>
                     <th class="text-center" scope="col" width="10%">Status</th>
                     <th class="text-center" scope="col" width="10%">Action</th>
@@ -57,7 +57,7 @@
   <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
-              <h4 class="modal-title" style="padding:10px">Add Product</h4>
+              <h4 class="modal-title" style="padding:10px">Create</h4>
           </div>
           <div class="panel panel-default">    
           <div class="panel-body">
@@ -66,7 +66,7 @@
                 <div class="row">
                     <div class="form-group" >
                       <div class="col-md-10">
-                        <label>Product Name</label>
+                        <label>Project Name</label>
                         <input type="text" class="form-control"  name="product_name" required>
                       </div>
                     </div>
@@ -74,7 +74,7 @@
                 <div class="row">
                   <div class="form-group" >
                     <div class="col-md-10">
-                      <label>Product Details</label>
+                      <label>Project Details</label>
                       <textarea class="form-control" rows="10" name="product_desc" id="editor" required></textarea>
                     </div>
                   </div>
@@ -260,7 +260,7 @@
                         
                     </div>
                     <div class="col-md-6" style="padding-left:90px;">
-                        <label>Product Logo: <label><br>
+                        <label>Project Logo: <label><br>
                         <input type="file" name="image1" id="editSectionOneContentImageId1"><br>
                     </div>
                     </div>
@@ -308,7 +308,7 @@
   <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
-              <h4 class="modal-title" style="padding:10px">Edit Product</h4>
+              <h4 class="modal-title" style="padding:10px">Edit</h4>
           </div>
           <div class="panel panel-default">    
           <div class="panel-body">
@@ -319,7 +319,7 @@
                 <div class="row">
                     <div class="form-group" >
                       <div class="col-md-10">
-                        <label>Product Name</label>
+                        <label>Project Name</label>
                         <input type="text" class="form-control" id="product_name" name="product_name" required>
                       </div>
                     </div>
@@ -327,7 +327,7 @@
                 <div class="row">
                   <div class="form-group" >
                     <div class="col-md-10">
-                      <label>Product Details</label>
+                      <label>Project Details</label>
                       <textarea class="form-control" rows="10" name="product_desc" id="editor1" required></textarea>
                     </div>
                   </div>
